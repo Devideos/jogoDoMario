@@ -2,6 +2,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
+const restartBotao = document.querySelector('#restartBtn');
 
 
 // Função para fazer o Mario pular
@@ -41,6 +42,15 @@ const loop = setInterval(() => {
         mario.src = './img/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
+
+        // Mostrar botão Reiniciar
+        if (restartBotao) {
+            restartBotao.style.display = 'block';
+            restartBotao.addEventListener('click', () => {
+                // Recarrega a página para reiniciar o jogo
+                window.location.reload();
+            });
+        }
 
         clearInterval(loop); // Para o loop de verificação de colisão
     }

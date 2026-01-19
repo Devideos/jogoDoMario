@@ -76,3 +76,23 @@
         right: 100%; /* termina fora da tela à direita */
     }
 }
+
+/* Estilo do botão Reiniciar mostrado no game over */
+.restart {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 20px;
+    font-size: 18px;
+    background: #ffea00;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.restart:hover {
+    filter: brightness(0.95);
+}
