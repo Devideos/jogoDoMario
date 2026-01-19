@@ -1,5 +1,7 @@
 // Seleciona o elemento Mario
 const mario = document.querySelector('.mario');
+const pipe = document.querySelector('.pipe');
+
 
 // Função para fazer o Mario pular
 const jump = () => {
@@ -10,6 +12,30 @@ const jump = () => {
         mario.classList.remove('jump');
     }, 500);
 }
+
+
+// Loop para verificar colisão entre Mario e o cano
+const loop = setInterval(() => {
+
+    const pipePosition = pipe.offsetLeft;
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    // Verifica se o cano está na posição do Mario
+    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+        // Parar a animação do cano
+        pipe.style.animation = 'none';
+        pipe.style.left = `${pipePosition}px`;
+        // Parar a animação do Mario
+        mario.style.animation = 'none';
+        mario.style.bottom = `${marioPosition}px`;
+
+        mario.src = './img/game-over.png';
+        mario.style.width = '75px';
+        mario.style.marginLeft = '50px';
+
+        clearInterval(loop); // Para o loop de verificação de colisão
+    }
+}, 10);
+
 
 // Adiciona um ouvinte de evento para a tecla pressionada
 document.addEventListener('keydown', jump);
