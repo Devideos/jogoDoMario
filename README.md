@@ -26,7 +26,7 @@ Este projeto foi desenvolvido utilizando apenas tecnologias base da web:
 - Pressione **qualquer tecla do teclado** para fazer o Mario pular
 - Desvie dos canos
 - Se encostar no cano → **Game Over**
-- Atualize a página para jogar novamente
+- Clique no botão reiniciar para voltar a jogar
 
 ---
 
