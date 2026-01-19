@@ -17,7 +17,7 @@
     position: absolute; /* posição absoluta para posicionar o cano dentro do tabuleiro de jogo */
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 3s linear infinite; /* chama a animação */
+    animation: pipe-animation 2s linear infinite; /* chama a animação */
 }
 
 /* Animação para mover o cano da direita para a esquerda */
@@ -34,4 +34,27 @@
     position: absolute;
     bottom: 0; /* posiciona o Mario na parte inferior do tabuleiro de jogo */
     width: 150px;
+}
+
+.jump {
+    animation: jump 500ms ease-out; /* aplica a animação de pulo quando a classe é adicionada */
+}
+
+/* Animação para o pulo do Mario */
+@keyframes jump {
+    0% {
+        bottom: 0; 
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
 }
