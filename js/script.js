@@ -1,6 +1,7 @@
-// Seleciona o elemento Mario
+// Seleciona os elementos Mario, cano e nuvens do DOM
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const clouds = document.querySelector('.clouds');
 
 
 // Função para fazer o Mario pular
@@ -24,10 +25,19 @@ const loop = setInterval(() => {
         // Parar a animação do cano
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
+
+        // Parar a animação das nuvens
+        if (clouds) {
+            const cloudsPosition = clouds.offsetLeft;
+            clouds.style.animation = 'none';
+            clouds.style.left = `${cloudsPosition}px`;
+        }
+
         // Parar a animação do Mario
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
 
+        // Muda a imagem do Mario para a imagem de game over
         mario.src = './img/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';

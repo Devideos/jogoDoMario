@@ -59,3 +59,20 @@
         bottom: 0;
     }
 }
+
+.clouds {
+    position: absolute;
+    top: 20px;
+    width: 500px;
+    animation: clouds-animation 20s linear infinite; /* animação para mover as nuvens */
+}
+
+/* Animação para mover as nuvens da direita para a esquerda */
+@keyframes clouds-animation {
+    from {
+        right: -500px; /* começa fora da tela à esquerda */
+    }
+    to {
+        right: 100%; /* termina fora da tela à direita */
+    }
+}
